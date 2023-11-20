@@ -1,0 +1,114 @@
+.body{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.container{
+    width: 390px;
+    height: 844px;
+    background-color: var(--white, #ffffff);
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    padding-left: 32px;
+}
+#change-hall-div{
+    
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: fixed;
+    margin-top:56px;
+    margin-left: 32px;
+    color: var(--gray-700, #344054);
+    /* text-align: left; */
+    font: var(--textsm-semibold, 600 14px/20px "Inter-SemiBold", sans-serif);
+    position: relative;
+
+}
+
+#request-bulletin-label{
+    color: var(--black, #000000);
+    text-align: left;
+    /* margin-top: 96px; */
+    font: var(--displayxs-bold, 700 24px/32px "Inter-Bold", sans-serif);
+    position: relative;
+    margin-left: 32px;
+    top: 34px;
+    width: 326px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#sub-header{
+    
+}
+#new-service-button{
+    background: #0077C8;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #0077C8;
+    border-width: 1px;
+    padding: 8px 14px 8px 14px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* position: relative; */
+    box-shadow: var(
+      --shadow-xs-box-shadow,
+      0px 1px 2px 0px rgba(16, 24, 40, 0.05)
+    );
+    overflow: hidden;
+    position: absolute;
+    /* left: calc(50% - 58px); */
+    top: 152px;
+    left: auto; 
+    right: 0;
+    margin-right:32px;
+
+}
+#new-service-button:hover{
+    background: #1d4f91;
+}
+.button-text{
+    color: var(--white, #ffffff);
+    text-align: left;
+    font: var(--textsm-semibold, 600 14px/20px "Inter-SemiBold", sans-serif);
+    position: relative;
+}
+
+
+#footer {
+    background: var(--color-white, #ffffff);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 3px;
+    position: fixed;
+    bottom: 0;
+    width: 390px;
+    box-shadow: var(
+      --border-top-box-shadow,
+      inset 0px 1px 0px 0px rgba(238, 238, 238, 1)
+    );
+
+}
+
+.footer-item{
+    margin: auto;
+    width: 100%;
+    text-align:center;
+    /* border: 3px solid green;
+    padding: 10px; */
+}
+
+.footer-item:hover{
+    color: #0077C8;
+    /* background-color: #0077C8; */
+}

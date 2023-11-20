@@ -12,35 +12,21 @@
     margin: auto;
     padding-left: 32px;
 }
-#choose-your-main-residence-hall-label{
+#my-requests-label{
     color: var(--black, #000000);
     text-align: left;
-    /* margin-left: 32px; */
+    margin-top: 96px;
     font: var(--displayxs-bold, 700 24px/32px "Inter-Bold", sans-serif);
-    left: calc(50% - 163px);
-    top: 34px;
-    width: 326px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-#can-change-later-label{
-    color: var(--gray-600, #475467);
-    text-align: left;
-    font: var(--textlg-semibold, 600 18px/28px "Inter-SemiBold", sans-serif);
     position: relative;
+    margin-left: 32px;
+    /* top: 34px; */
     width: 326px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    /* margin-left:32px; */
-}
-#dorm-selection-dropdown{
-    width: 320px;
-    height: 44px;
 }
 
-#to-bulletin-button{
+#new-service-button{
     background: #0077C8;
     border-radius: 8px;
     border-style: solid;
@@ -60,11 +46,13 @@
     );
     overflow: hidden;
     position: absolute;
-    left: calc(50% - 58px);
-    top: 772px;
+    left: auto; 
+    right: 0;
+    margin-right:32px;
+    top: 152px;
 
 }
-#to-bulletin-button:hover{
+#new-service-button:hover{
     background: #1d4f91;
 }
 .button-text{
@@ -74,6 +62,31 @@
     position: relative;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-  }
+
+#footer {
+    background: var(--color-white, #ffffff);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 3px;
+    position: fixed;
+    bottom: 0;
+    width: 390px;
+    box-shadow: var(
+      --border-top-box-shadow,
+      inset 0px 1px 0px 0px rgba(238, 238, 238, 1)
+    );
+
+}
+
+.footer-item{
+    margin: auto;
+    width: 100%;
+    text-align:center;
+    /* border: 3px solid green;
+    padding: 10px; */
+}
+
+.footer-item:hover{
+    color: #0077C8;
+    /* background-color: #0077C8; */
+}

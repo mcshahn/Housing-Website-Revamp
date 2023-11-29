@@ -14,6 +14,14 @@ def dorm_selection():
 def my_requests():
     return render_template('my_requests_page.html')
  
+@app.route('/requests_bulletin')
+def requests_bulletin():
+    return render_template('request_bulletin.html')
+
+#Test to display card remove in final product
+@app.route('/card')
+def card():
+    return render_template('card.html') 
      
 # Running app
 if __name__ == '__main__':

@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/create_request.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- back button -->
+            <div id="title"> Create new request </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- location -->
+            <div id="location">Location </div>
+            <div class="text-box">
+                <div id="uni">Main Residence Hall </div>
+                <select name="language" id = "dorm-selection-dropdown" required>
+                  <option value="" disabled selected>47 Claremont</option> 
+                  <option class="dropdown-content" value="east_campus">East Campus</option>
+                  <option class="dropdown-content" value="47_claremont">47 Claremont</option>
+                  <option class="dropdown-content" value="ruggles">Ruggles</option>
+                  <option class="dropdown-content" value="furnald">Furnald</option>
+                </select>
+            </div>
+            <div class="text-box">
+              <div id="uni">Floor </div>
+              <select name="language" id = "dorm-selection-dropdown" required>
+                <option value="" selected disabled hidden>3</option> 
+                <!-- pull these options -->
+                <option class="dropdown-content" value="1">1</option>
+                <option class="dropdown-content" value="2">2</option>
+                <option class="dropdown-content" value="3">3</option>
+                <option class="dropdown-content" value="4">4</option>
+              </select>
+            </div>
+            <div class="text-box">
+              <div id="uni">Room/Space </div>
+              <select name="language" id = "dorm-selection-dropdown" required>
+                <option value="" selected disabled hidden>Lounge</option> 
+                <option class="dropdown-content" value="lounge">Lounge</option>
+                <option class="dropdown-content" value="kitchen">Kitchen</option>
+              </select>
+            </div>
+            <div class="text-box">
+              <div id="uni">Specify space (optional) </div>
+              <div>
+                <input type="text" name="specify" placeholder="Help us identify an exact location">
+              </div>
+            </div>
+
+            <!-- issue -->
+            <div id="issue">Issue </div>
+            <!-- search; TODO: SEARCH LOGO? -->
+            <div class="text-box">
+              <div>
+                <input type="text" name="specify" placeholder="Search for an issue">
+              </div>
+            </div>
+            <!-- additional description -->
+            <div class="text-box" id="additional">
+              <div id="uni">Additional Description </div>
+              <div>
+                <input type="text" name="specify" placeholder="Type any additional information here">
+              </div>
+            </div>
+            <div>
+              <div> <!-- submit request button -->
+                <button type="button">Submit Request</button>
+              </div>
+            </div>
+            
+            <!-- BOTTOM NAV BAR -->
+
+          </div>
+        
+    </body>
+
+</html>

@@ -22,6 +22,10 @@ def requests_bulletin():
 def login():
     return render_template('login.html') 
 
+@app.route('/create_request')
+def create_request():
+    return render_template('create_request.html') 
+
 #Test to display card remove in final product
 @app.route('/card')
 def card():

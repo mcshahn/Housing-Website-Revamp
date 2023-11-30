@@ -18,6 +18,10 @@ def my_requests():
 def requests_bulletin():
     return render_template('request_bulletin.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html') 
+
 #Test to display card remove in final product
 @app.route('/card')
 def card():

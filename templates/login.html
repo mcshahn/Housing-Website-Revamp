@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="title"> Columbia Service Requests </div>
+            <br>
+            <div class="text-box">
+                <div id="uni">Uni</div>
+                <div>
+                <input type="text" name="uni" placeholder="eg1234">
+                </div>
+            </div>
+            <div>
+              <div> <!-- login button -->
+                <button type="button">Login</button>
+              </div>
+            </div>
+            
+            <div id="cu-logo">
+              <img src="{{ url_for('static',filename='images/columbia-university-logo.png') }}"/>
+            </div>
+
+          </div>
+        
+    </body>
+
+</html>

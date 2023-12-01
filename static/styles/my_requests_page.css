@@ -80,6 +80,7 @@
   box-sizing: border-box;
 }
 .card {
+  margin-left: 13px;
   background: #f4f4f4;
   border-radius: 8px;
   padding: 11px 12px 11px 12px;

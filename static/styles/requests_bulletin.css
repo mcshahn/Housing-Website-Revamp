@@ -120,14 +120,28 @@
     /* background-color: #0077C8; */
 }
 
+
+
+#scrollable-container {
+  display: flex;
+  width: 359px;
+  height: 563px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  position: absolute;
+  top: 233px;
+}
+
+
 .card,
 .card * {
   box-sizing: border-box;
 }
-
 .card {
-  margin-top: 20px;
-  margin-left:18px;
+  margin-left: 13px;
   background: #f4f4f4;
   border-radius: 8px;
   padding: 11px 12px 11px 12px;

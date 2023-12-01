@@ -5,7 +5,7 @@
     </head>
     <body>
         <div class="container">
-            <div id="change-hall-div"><span id="hall-label">East Campus</span><span><button>Change</button></span></div>
+            <div id="change-hall-div"><span id="hall-label">East Campus</span><span><button onclick="openDorms()">Change</button></span></div>
             <div id="request-bulletin-label">
                 Request Bulletin
             </div>
@@ -32,111 +32,160 @@
                     </button>
                 </span>
             </div>
-            <div class="cards">
+            <div id="scrollable-container">
               <div class="card">
-                <div class="frame-4">
-                  <div class="card-header">
-                    <div class="title">Broken Pipes</div>
-                  </div>
-                  <div class="supporting-text">
-                    some description about the situation, should only display 2 or 3 lines max
-                    the rest is eliminated...
-                  </div>
-                  <div class="frame-5">
-                    <div class="badge">
+                  <div class="frame-4">
+                    <div class="card-header">
+                      <div class="title">Broken Pipes</div>
+                    </div>
+                    <div class="supporting-text">
+                      some description about the situation, should only display 2 or 3 lines max
+                      the rest is eliminated...
+                    </div>
+                    <div class="frame-5">
                       <div class="badge">
-                        <div class="badge-base">
-                          <div class="dot">
-                            <div class="dot2"></div>
+                        <div class="badge">
+                          <div class="badge-base">
+                            <div class="dot">
+                              <div class="dot2"></div>
+                            </div>
+                            <div class="text">In Progress</div>
                           </div>
-                          <div class="text">In Progress</div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="frame-3">
-                  <div class="badge">
-                    <div class="badge">
-                      <div class="badge-base2">
-                        <svg
-                          class="arrow-up"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 12 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6"
-                            stroke="#2E90FA"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-              
-                        <div class="text2">Echo</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="text2">5</div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="frame-4">
-                  <div class="card-header">
-                    <div class="title">Broken Pipes</div>
-                  </div>
-                  <div class="supporting-text">
-                    some description about the situation, should only display 2 or 3 lines max
-                    the rest is eliminated...
-                  </div>
-                  <div class="frame-5">
+                  <div class="frame-3">
                     <div class="badge">
                       <div class="badge">
-                        <div class="badge-base">
-                          <div class="dot">
-                            <div class="dot2"></div>
+                        <div class="badge-base2">
+                          <svg
+                            class="arrow-up"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6"
+                              stroke="#2E90FA"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                
+                          <div class="text2">Echo</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text2">5</div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="frame-4">
+                    <div class="card-header">
+                      <div class="title">Broken Pipes</div>
+                    </div>
+                    <div class="supporting-text">
+                      some description about the situation, should only display 2 or 3 lines max
+                      the rest is eliminated...
+                    </div>
+                    <div class="frame-5">
+                      <div class="badge">
+                        <div class="badge">
+                          <div class="badge-base">
+                            <div class="dot">
+                              <div class="dot2"></div>
+                            </div>
+                            <div class="text">In Progress</div>
                           </div>
-                          <div class="text">In Progress</div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="frame-3">
-                  <div class="badge">
+                  <div class="frame-3">
                     <div class="badge">
-                      <div class="badge-base2">
-                        <svg
-                          class="arrow-up"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 12 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6"
-                            stroke="#2E90FA"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-              
-                        <div class="text2">Echo</div>
+                      <div class="badge">
+                        <div class="badge-base2">
+                          <svg
+                            class="arrow-up"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6"
+                              stroke="#2E90FA"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                
+                          <div class="text2">Echo</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text2">5</div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="frame-4">
+                    <div class="card-header">
+                      <div class="title">Broken Pipes</div>
+                    </div>
+                    <div class="supporting-text">
+                      some description about the situation, should only display 2 or 3 lines max
+                      the rest is eliminated...
+                    </div>
+                    <div class="frame-5">
+                      <div class="badge">
+                        <div class="badge">
+                          <div class="badge-base">
+                            <div class="dot">
+                              <div class="dot2"></div>
+                            </div>
+                            <div class="text">In Progress</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="text2">5</div>
+                  <div class="frame-3">
+                    <div class="badge">
+                      <div class="badge">
+                        <div class="badge-base2">
+                          <svg
+                            class="arrow-up"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6"
+                              stroke="#2E90FA"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                
+                          <div class="text2">Echo</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text2">5</div>
+                  </div>
                 </div>
-              </div>
-            </div>  
             <div id="footer">
                 <span class="footer-item"><div class="fa fa-list-ul"></div><div>Request Bulletin</div></span>
-                <span class="footer-item"><div class="fa fa-user-o" aria-hidden="true"></div><div onclick="openMR()">My Requests</div></span>
+                <span class="footer-item" onclick="openMR()"><div class="fa fa-user-o" aria-hidden="true"></div><div>My Requests</div></span>
             </div>
         </div>
       <script>
@@ -148,6 +197,10 @@
           function makeR() {
               // Replace 'newpage.html' with the URL of the page you want to open
               window.location.href = 'create_request';
+          }
+          function openDorms() {
+              // Replace 'newpage.html' with the URL of the page you want to open
+              window.location.href = 'dorm_selection';
           }
       </script>   
     </body>

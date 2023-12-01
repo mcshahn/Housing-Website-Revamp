@@ -4,6 +4,11 @@ from flask import Flask, render_template
 # Initializing flask app
 app = Flask(__name__)
  
+
+#Route for landing page
+@app.route('/')
+def home():
+    return render_template('login.html') 
  
 # Route for seeing a data
 @app.route('/dorm_selection')

@@ -69,7 +69,12 @@
             </div>
             <div>
               <div> <!-- submit request button -->
-                <button type="button">Submit Request</button>
+                <button type="button" id="submit" onclick="openPopup()">Submit Request</button>
+                <div class="popup" id="popup">
+                    <h2>Thank you!</h2>
+                    <p>Facilities has received your request. An email confirmation has been sent to your inbox.</p>
+                    <button type="button" id="ok" onclick="closePopup()">OK</button>
+                </div>
               </div>
             </div>
             
@@ -82,6 +87,16 @@
 
           </div>
         
+
+      <script>
+        let popup = document.getElementById("popup");
+        function openPopup() {
+          popup.classList.add("open-popup");
+        }
+        function closePopup() {
+          popup.classList.remove("open-popup");
+        }
+      </script>
     </body>
 
 </html>

@@ -6,7 +6,7 @@
     <body>
         <div class="container">
             <!-- back button -->
-            <div id="back">
+            <div id="back" onclick="bulletin()">
               <i class="fa fa-chevron-left" i="arrow"></i>
               <div id="back-label">Back</div>
             </div>
@@ -81,8 +81,8 @@
             <!-- BOTTOM NAV BAR -->
 
             <div id="nav-bar">
-              <span class="item"><div id="nav-label"><i class="fa fa-list-ul icon"></i><br><h>Request Bulletin</h></div></span>
-              <span class="item"><div id="nav-label"><i class="fa fa-user-o icon" aria-hidden="true"></i><br><h>My Requests</h></div></span>
+              <span class="item"><div id="nav-label" onclick="bulletin()"><i class="fa fa-list-ul icon"></i><br><h>Request Bulletin</h></div></span>
+              <span class="item"><div id="nav-label" onclick="myRequests()"><i class="fa fa-user-o icon" aria-hidden="true"></i><br><h>My Requests</h></div></span>
             </div>
 
           </div>
@@ -95,6 +95,13 @@
         }
         function closePopup() {
           popup.classList.remove("open-popup");
+          window.location.href = 'my_requests';
+        }
+        function bulletin() {
+          window.location.href = 'requests_bulletin';
+        }
+        function myRequests() {
+          window.location.href = 'my_requests';
         }
       </script>
     </body>

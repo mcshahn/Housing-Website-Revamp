@@ -1,32 +1,32 @@
 // import logo from './logo.svg';
-import './card.css';
-function Card({title, description, status, numEchoes}){
+import './card_bulletin.css';
+function CardBulletin({title, description, status, numEchoes}){
   return (
     <div class="card">
-    <div class="frame-4">
+    <div class="card-content">
       <div class="card-header">
         <div class="title">{title}</div>
       </div>
       <div class="supporting-text">
         {description}
       </div>
-      <div class="frame-5">
-        <div class="badge">
-          <div class="badge">
-            <div class="badge-base">
-              <div class="dot">
-                <div class="dot2"></div>
+      <div class="status-label">
+        <div class="label-shape">
+          
+            <div class="status-label-content">
+              <div class="status-dot-wrapper">
+                <div class="status-dot"></div>
               </div>
-              <div class="text">{status}</div>
+              <div class="status-label-text">{status}</div>
             </div>
-          </div>
+         
         </div>
       </div>
     </div>
-    <div class="frame-3">
-      <div class="badge">
-        <div class="badge">
-          <div class="badge-base2">
+    <div class="echo-div">
+      <div class="label-shape">
+        
+          <div class="echo-button">
             <svg
               class="arrow-up"
               width="12"
@@ -44,17 +44,18 @@ function Card({title, description, status, numEchoes}){
               />
             </svg>
   
-            <div class="text2">Echo</div>
+            <div class="echo-text">Echo</div>
           </div>
         </div>
+        <div class="echo-text">{numEchoes}</div>
       </div>
-      <div class="text2">{numEchoes}</div>
+      
     </div>
-  </div>
+  
 
   );
 }
 
-export default Card;
+export default CardBulletin;
 
 

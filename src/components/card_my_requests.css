@@ -11,7 +11,7 @@
   height: 212px;
   position: relative;
 }
-.frame-4 {
+.card-content {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -50,7 +50,7 @@
   position: relative;
   align-self: stretch;
 }
-.frame-5 {
+.status-label {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -59,7 +59,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.badge {
+.label-shape {
   display: flex;
   flex-direction: row;
   gap: 0px;
@@ -68,7 +68,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.badge-base {
+.status-label-content {
   background: #f7efd7;
   border-radius: 16px;
   padding: 2px 8px 2px 6px;
@@ -80,14 +80,14 @@
   flex-shrink: 0;
   position: relative;
 }
-.dot {
+.status-dot-wrapper {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
   position: relative;
   overflow: hidden;
 }
-.dot2 {
+.status-dot {
   background: var(--warning-500, #f79009);
   border-radius: 50%;
   width: 6px;
@@ -96,13 +96,13 @@
   left: 1px;
   top: 1px;
 }
-.text {
+.status-label-text {
   color: var(--warning-700, #b54708);
   text-align: center;
   font: var(--textxs-medium, 500 12px/18px "Inter-Medium", sans-serif);
   position: relative;
 }
-.frame-3 {
+.resolve-div {
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -112,7 +112,7 @@
   right: 12px;
   bottom: 9px;
 }
-.badge-base2 {
+.resolve-button {
   background: #d4e6f4;
   border-radius: 16px;
   padding: 2px 8px 2px 6px;
@@ -124,14 +124,8 @@
   flex-shrink: 0;
   position: relative;
 }
-.arrow-up {
-  flex-shrink: 0;
-  width: 12px;
-  height: 12px;
-  position: relative;
-  overflow: visible;
-}
-.text2 {
+
+.resolve-text{
   color: var(--blue-700, #175cd3);
   text-align: center;
   font: var(--textxs-medium, 500 12px/18px "Inter-Medium", sans-serif);

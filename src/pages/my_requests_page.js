@@ -22,6 +22,7 @@ function MyRequestsPage(){
             <div id="scrollable-container">
             <CardMyRequests title="Broken Pipes" description="Broken pipes in the lounge area causing flooding" status="In Progress" numEchoes={5}/>
             <CardMyRequests title="Drain Blockage" description="Shower drain is not draining" status="Received" numEchoes={3}/>
+            <CardMyRequests title="Broken Outlet" description="Outlet in the wall doesn't have any electricity" status="Resolved" numEchoes={7}/>
             </div> 
             <Footer/>
         </div>

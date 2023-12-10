@@ -1,0 +1,110 @@
+.status-label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .label-shape {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .in-progress-label-content {
+    background: #f7efd7;
+    border-radius: 16px;
+    padding: 2px 8px 2px 6px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .resolved-label-content {
+    background: #CAE6D6;
+    border-radius: 16px;
+    padding: 2px 8px 2px 6px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .not-started-label-content {
+    background: #EAD1CF;
+    border-radius: 16px;
+    padding: 2px 8px 2px 6px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .status-dot-wrapper {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .in-progress-status-dot {
+    background: var(--warning-500, #F79009);
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+  }
+  /* .not-started-status-dot {
+    background: var(--warning-500, #EAD1CF);
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+  } */
+  .not-started-status-dot {
+    background: var(--warning-500, #F04438);
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+  }
+  .resolved-label-text {
+    color: var(--warning-700, #027A48);
+    text-align: center;
+    font: var(--textxs-medium, 500 12px/18px "Inter-Medium", sans-serif);
+    position: relative;
+  }
+  .in-progress-label-text {
+    color: var(--warning-700, #B54708);
+    text-align: center;
+    font: var(--textxs-medium, 500 12px/18px "Inter-Medium", sans-serif);
+    position: relative;
+  }
+  .not-started-label-text {
+    color: var(--warning-700, #B42318);
+    text-align: center;
+    font: var(--textxs-medium, 500 12px/18px "Inter-Medium", sans-serif);
+    position: relative;
+  }
+  .icon{
+    font-size: 1px;
+    color:#12B76A;
+  }

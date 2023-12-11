@@ -4,7 +4,7 @@ import { faCheck} from '@fortawesome/free-solid-svg-icons'
 
 
 export default function StatusLabel({iconName, status}){
-    console.log(iconName)
+    // console.log(iconName)
     return (
         <div class="status-label">
         <div class="label-shape">

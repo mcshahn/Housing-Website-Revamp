@@ -1,6 +1,11 @@
 import './card_my_requests.css';
 import StatusLabel from './status_label'
+import {useState} from 'react';
 function CardMyRequests({title, description, status}){
+  const [curStatus, setCurStatus] = useState(status);
+  function handleResolve(){
+    setCurStatus("resolved")
+  }
   return (
     <div class="card">
     <div class="card-content">
@@ -10,13 +15,13 @@ function CardMyRequests({title, description, status}){
       <div class="supporting-text">
         {description}
       </div>
-      <StatusLabel iconName={status} status={status}/>
+      <StatusLabel iconName={curStatus} status={curStatus}/>
     </div>
     <div class="resolve-div">
       <div class="label-shape">
-          <div class="resolve-button">
+          <button onClick={handleResolve} class="resolve-button">
             <div class="resolve-text">Mark As Resolved</div>
-          </div>
+          </button>
         </div>
         
       </div>

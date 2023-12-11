@@ -50,12 +50,8 @@ def get_user_requests():
          "description":"Outlet in the wall doesn't have any electricity",
          "status": "resolved"}
     ]
-    # Returning an api for showing in  reactjs
     return jsonify(user_requests)
-    # return {"title": "Broken Pipes",
-    #      "description":"Broken pipes in the lounge area causing flooding",
-    #      "status": "not_started"}
-
+   
 @app.route('/ec_data')
 def get_ec_requests():
  

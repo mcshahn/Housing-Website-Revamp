@@ -1,7 +1,6 @@
-// import logo from './logo.svg';
 import './card_my_requests.css';
 import StatusLabel from './status_label'
-function CardMyRequests({title, description, status, numEchoes}){
+function CardMyRequests({title, description, status}){
   return (
     <div class="card">
     <div class="card-content">
@@ -11,19 +10,7 @@ function CardMyRequests({title, description, status, numEchoes}){
       <div class="supporting-text">
         {description}
       </div>
-      {/* <div class="status-label">
-        <div class="label-shape">
-          
-            <div class="status-label-content">
-              <div class="status-dot-wrapper">
-                <div class="status-dot"></div>
-              </div>
-              <div class="status-label-text">{status}</div>
-            </div>
-         
-        </div>
-      </div> */}
-      <StatusLabel iconName={"not_started"} status="resolved"/>
+      <StatusLabel iconName={status} status={status}/>
     </div>
     <div class="resolve-div">
       <div class="label-shape">

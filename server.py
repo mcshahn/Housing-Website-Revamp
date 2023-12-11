@@ -1,6 +1,6 @@
 # Import flask and datetime module for showing date and time
 from flask import Flask, render_template 
-
+from flask import jsonify
 # Initializing flask app
 app = Flask(__name__)
  
@@ -35,7 +35,38 @@ def create_request():
 @app.route('/card')
 def card():
     return render_template('card.html') 
-     
+
+
+@app.route('/user_data')
+def get_user_requests():
+    user_requests=[
+        {"title": "Broken Pipes",
+         "description":"Broken pipes in the lounge area causing flooding",
+         "status": "not_started"},
+         {"title": "Drain Blockage",
+         "description":"Shower drain is not draining",
+         "status": "in_progress"},
+         {"title": "Broken Outlet",
+         "description":"Outlet in the wall doesn't have any electricity",
+         "status": "resolved"}
+    ]
+    # Returning an api for showing in  reactjs
+    return jsonify(user_requests)
+    # return {"title": "Broken Pipes",
+    #      "description":"Broken pipes in the lounge area causing flooding",
+    #      "status": "not_started"}
+
+@app.route('/ec_data')
+def get_ec_requests():
+ 
+    # Returning an api for showing in  reactjs
+    return {
+        'Name':"geek", 
+        "Age":"22",
+        "Date":x, 
+        "programming":"python"
+        }
+ 
 # Running app
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,6 +1,10 @@
 # Import flask and datetime module for showing date and time
-from flask import Flask, render_template 
-from flask import jsonify
+from flask import Flask, render_template, jsonify
+
+# firebase = pyrebase.initialize_app(config)
+# auth = firebase.auth() 
+# storage = firebase.storage()
+
 # Initializing flask app
 app = Flask(__name__)
  
@@ -30,6 +34,13 @@ def login():
 @app.route('/create_request')
 def create_request():
     return render_template('create_request.html') 
+
+@app.route('/create', methods=['POST'])
+def create():
+    data = request.get_json()
+
+    doc_ref = db.collection('requests').add(data)
+    return jsonify({"message": "Data added successfully", "document_id": doc_ref.id})
 
 #Test to display card remove in final product
 @app.route('/card')

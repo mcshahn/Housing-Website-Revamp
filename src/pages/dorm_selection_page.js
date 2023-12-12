@@ -1,7 +1,27 @@
 // import logo from './logo.svg';
+import { Link, useNavigate } from 'react-router-dom';
 import './dorm_selection.css';
-
+import { useState } from 'react';
 function DormSelectionPage() {
+  
+
+  const navigate = useNavigate();
+
+  const toRequestsBulletin=()=>{
+    navigate('/requests_bulletin',{state:{dorm:value}});
+  }
+  const getInitialState = () => {
+      const value = "none";
+      return value;
+    };
+  
+    const [value, setValue] = useState(getInitialState);
+  
+    const handleChange = (e) => {
+      setValue(e.target.value);
+    };
+
+    console.log(value)
   return (
     <div class="container">
             <div id="choose-your-main-residence-hall-label">
@@ -10,7 +30,7 @@ function DormSelectionPage() {
             <div id="can-change-later-label">
                 You can change this in the future
             </div>
-            <select name="language" id = "dorm-selection-dropdown">
+            <select name="language" id = "dorm-selection-dropdown" value={value} onChange={handleChange} >
                 <option value="none" selected disabled hidden>Select a residence hall</option> 
                 <option class="dropdown-content" value="537 W 121st">537 W 121st</option>
                 <option class="dropdown-content" value="548 W 113th St.">548 W 113th St.</option>
@@ -46,9 +66,12 @@ function DormSelectionPage() {
                 <option class="dropdown-content" value="Wien">Wien</option>
                 <option class="dropdown-content" value="Woodbridge">Woodbridge</option>
               </select>
-            <button id="to-bulletin-button">
+              
+            <button id="to-bulletin-button" onClick={toRequestsBulletin}>
                 <span class="button-text">Service Request Bulletin</span><span><i class="fa fa-chevron-right button-text"></i></span></button>
+                
         </div>
+        
   );
 }
 

@@ -52,7 +52,7 @@ def card():
 def get_user_requests():
     user_requests=[
         {"title": "Broken Pipes",
-         "description":"Broken pipes in the lounge area causing flooding",
+         "description":"Broken pipes in the lounge area causing flooding.",
          "status": "not_started"},
          {"title": "Drain Blockage",
          "description":"Shower drain is not draining",

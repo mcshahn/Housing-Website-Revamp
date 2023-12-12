@@ -1,5 +1,7 @@
 // import logo from './logo.svg';
 import './card_bulletin.css';
+import StatusLabel from './status_label';
+
 function CardBulletin({title, description, status, numEchoes}){
   return (
     <div class="card">
@@ -10,18 +12,7 @@ function CardBulletin({title, description, status, numEchoes}){
       <div class="supporting-text">
         {description}
       </div>
-      <div class="status-label">
-        <div class="label-shape">
-          
-            <div class="status-label-content">
-              <div class="status-dot-wrapper">
-                <div class="status-dot"></div>
-              </div>
-              <div class="status-label-text">{status}</div>
-            </div>
-         
-        </div>
-      </div>
+      <StatusLabel iconName={status} status={status}/>
     </div>
     <div class="echo-div">
       <div class="label-shape">

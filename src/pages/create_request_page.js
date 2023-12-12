@@ -8,12 +8,47 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 function CreateRequestPage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const openPopup = () => {
-    setIsPopupOpen(true);
+  const handleSubmit = async () => {
+    try {
+      // Make a POST request to the server endpoint with the form data
+      const response = await fetch('/add_user_request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        // If the request is successful, open the popup
+        setIsPopupOpen(true);
+      } else {
+        console.error('Failed to submit request:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error submitting request:', error.message);
+    }
   };
 
   const closePopup = () => {
     setIsPopupOpen(false);
+  };
+
+  const [formData, setFormData] = useState({
+    dorm: '',
+    floor: '',
+    roomSpace: '',
+    specifySpace: '',
+    issue: '',
+    additionalDescription: ''
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
   };
 
   return (
@@ -30,7 +65,7 @@ function CreateRequestPage() {
             <div id="location">Location </div>
             <div class="text-box">
                 <div id="uni">Main Residence Hall </div>
-                <select name="language" id = "dorm-selection-dropdown" required>
+                <select name="dorm" id = "dorm-selection-dropdown" onChange={handleChange} required>
                   <option value="" disabled selected>47 Claremont</option> 
                   <option class="dropdown-content" value="east_campus">East Campus</option>
                   <option class="dropdown-content" value="47_claremont">47 Claremont</option>
@@ -40,7 +75,7 @@ function CreateRequestPage() {
             </div>
             <div class="text-box">
               <div id="uni">Floor </div>
-              <select name="language" id = "dorm-selection-dropdown" required>
+              <select name="floor" id = "dorm-selection-dropdown" onChange={handleChange} required>
                 <option value="" selected disabled hidden>3</option> 
                 
                 <option class="dropdown-content" value="1">1</option>
@@ -51,7 +86,7 @@ function CreateRequestPage() {
             </div>
             <div class="text-box">
               <div id="uni">Room/Space </div>
-              <select name="language" id = "dorm-selection-dropdown" required>
+              <select name="roomSpace" id = "dorm-selection-dropdown" onChange={handleChange} required>
                 <option value="" selected disabled hidden>Lounge</option> 
                 <option class="dropdown-content" value="lounge">Lounge</option>
                 <option class="dropdown-content" value="kitchen">Kitchen</option>
@@ -60,7 +95,7 @@ function CreateRequestPage() {
             <div class="text-box">
               <div id="uni">Specify space (optional) </div>
               <div>
-                <input type="text" name="specify" placeholder="Help us identify an exact location"></input>
+                <input type="text" name="specifySpace" placeholder="Help us identify an exact location" onChange={handleChange}></input>
               </div>
             </div>
 
@@ -69,19 +104,19 @@ function CreateRequestPage() {
            
             <div class="text-box">
               <div>
-                <input type="text" name="specify" placeholder="Search for an issue"></input>
+                <input type="text" name="issue" placeholder="Search for an issue" onChange={handleChange}></input>
               </div>
             </div>
             
             <div class="text-box" id="additional">
               <div id="uni">Additional Description </div>
               <div>
-                <input type="text" name="specify" placeholder="Type any additional information here"></input>
+                <input type="text" name="additionalDescription" placeholder="Type any additional information here" onChange={handleChange}></input>
               </div>
             </div>
             <div>
               <div> 
-                <button type="button" id="submit" onClick={openPopup}>Submit Request</button>
+                <button type="button" id="submit" onClick={handleSubmit}>Submit Request</button>
 
                 {isPopupOpen && (
                   <div className="popup" id="popup">

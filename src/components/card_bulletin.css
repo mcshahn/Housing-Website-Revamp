@@ -50,7 +50,7 @@
   position: relative;
   align-self: stretch;
 }
-.status-label {
+/* .status-label {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -82,10 +82,11 @@
 }
 .status-dot-wrapper {
   flex-shrink: 0;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   position: relative;
   overflow: hidden;
+  
 }
 .status-dot {
   background: var(--warning-500, #f79009);
@@ -101,7 +102,7 @@
   text-align: center;
   font: var(--textxs-medium, 500 12px/18px "Inter-Medium", sans-serif);
   position: relative;
-}
+} */
 .echo-div {
   display: flex;
   flex-direction: row;

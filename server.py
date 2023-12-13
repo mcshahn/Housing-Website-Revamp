@@ -153,8 +153,7 @@ def update_status():
     data = request.get_json()
     uid = data.get('uid')
     new_status = data.get('newStatus')
-    print(uid)
-    print(type(uid))
+
     # Update the status in the user_requests dictionary
     for request_info in user_requests.get(session.get('uni', ''), []):
         if request_info['uid'] == uid:
@@ -176,7 +175,7 @@ def get_user_requests():
 @app.route('/all_requests')
 def get_all_requests():
     selected_dorm = session.get('selected_dorm')
-    print("hi", selected_dorm)
+
     dorm_requests = []
     for r in requests:
         if r['dorm'] == selected_dorm:

@@ -65,12 +65,12 @@ function CreateRequestPage() {
             <br></br>
             <br></br>
             
-          
+          <form onSubmit={handleSubmit}>
             <div id="location">Location </div>
             <div class="text-box">
                 <div id="uni">Main Residence Hall </div>
                 <select className='create-request-select' name="dorm" id = "dorm-selection-dropdown" onChange={handleChange} required>
-                <option value="none" selected disabled hidden>Select a residence hall</option> 
+                <option value="" selected disabled hidden>Select a residence hall</option> 
                   <option class="dropdown-content" value="537 W 121st">537 W 121st</option>
                 <option class="dropdown-content" value="548 W 113th St.">548 W 113th St.</option>
                 <option class="dropdown-content" value="600 W 113TH ST (Nuss)">600 W 113TH ST (Nuss)</option>
@@ -137,7 +137,7 @@ function CreateRequestPage() {
            
             <div class="text-box">
               <div>
-                <input type="text" name="issue" placeholder="Search for an issue" onChange={handleChange}></input>
+                <input type="text" name="issue" placeholder="Search for an issue" onChange={handleChange} required></input>
               </div>
             </div>
             
@@ -149,7 +149,7 @@ function CreateRequestPage() {
             </div>
             <div>
               <div> 
-                <button className='create-request-buttons' type="button" id="submit" onClick={handleSubmit}>Submit Request</button>
+                <button className='create-request-buttons' type="submit" id="submit">Submit Request</button>
 
                 {isPopupOpen && (
                   <div className="popup" id="popup">
@@ -161,6 +161,7 @@ function CreateRequestPage() {
                 
               </div>
             </div>
+          </form>
 
             {/* <div id="nav-bar">
               <span className="item"><div id="nav-label"><FontAwesomeIcon icon={faListUl} id="icon" /><br></br><h>Request Bulletin</h></div></span>

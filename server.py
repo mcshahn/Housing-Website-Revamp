@@ -112,15 +112,16 @@ def login():
 
         if uni not in user_requests:
             user_requests[uni] = []
+            echos_per_user[uni] = []
 
         # Redirect to the main page or any other page after successful login
         return redirect(url_for('dorm_selection'))
 
     return render_template('login.html')
 
-@app.route('/create_request')
-def create_request():
-    return render_template('create_request.html') 
+# @app.route('/create_request')
+# def create_request():
+#     return render_template('create_request.html') 
 
 @app.route('/create', methods=['POST'])
 def create():
@@ -157,7 +158,9 @@ def update_status():
 @app.route('/user_data')
 def get_user_requests():
     uni = session.get('uni')
-    return jsonify(user_requests[uni])
+    print(uni)
+    print(user_requests.get(uni, []))
+    return jsonify(user_requests.get(uni, []))
 
 @app.route('/all_requests')
 def get_all_requests():
@@ -195,12 +198,14 @@ def add_user_request():
                     "echo": 0}
 
             new_shortened = {
+                "uid": uid,
                 "title": title, 
                 "description": description, 
                 "status": status
             }
 
             # Append the new user request to the global variable
+            print(user_requests)
             user_requests[uni].append(new_shortened)
             requests.append(new_request)
 

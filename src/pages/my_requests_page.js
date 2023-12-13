@@ -39,11 +39,12 @@ function MyRequestsPage(){
             </button>
             <div id="scrollable-container">
             
-            {data.requests.map((requestItem, index)=>(
+            {(data.requests.length > 0) ? data.requests.map((requestItem, index)=>(
                 <CardMyRequests uid={requestItem.uid} title={requestItem.title} description={requestItem.description} status={requestItem.status} /> 
             )
 
-            )}
+            ): <div id="no-requests-text">You have no requests! Click on the button above to create a new request!</div>
+            }
             </div> 
             <Footer/>
         </div>

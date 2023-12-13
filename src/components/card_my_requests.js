@@ -1,10 +1,27 @@
 import './card_my_requests.css';
 import StatusLabel from './status_label'
 import {useState} from 'react';
-function CardMyRequests({title, description, status}){
+function CardMyRequests({uid, title, description, status}){
   const [curStatus, setCurStatus] = useState(status);
   function handleResolve(){
     setCurStatus("resolved")
+    console.log(uid)
+    fetch('/update_status', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        uid,
+        newStatus: 'resolved',
+      }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to update status');
+        }
+      })
+      .catch(error => console.error('Error updating status:', error));
   }
   return (
     <div class="card">

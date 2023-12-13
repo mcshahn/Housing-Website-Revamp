@@ -137,17 +137,18 @@ def card():
 @app.route('/update_status', methods=['POST'])
 def update_status():
     data = request.get_json()
-    title = data.get('title')
+    uid = data.get('uid')
     new_status = data.get('newStatus')
-
+    print(uid)
+    print(type(uid))
     # Update the status in the user_requests dictionary
     for request_info in user_requests.get(session.get('uni', ''), []):
-        if request_info['title'] == title:
+        if request_info['uid'] == uid:
             request_info['status'] = new_status
 
 
     for r in requests:
-        if r['title'] == title:
+        if r['uid'] == uid:
             r['status'] = new_status
 
     return jsonify({'success': True})

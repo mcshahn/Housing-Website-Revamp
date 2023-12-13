@@ -40,7 +40,7 @@ function MyRequestsPage(){
             <div id="scrollable-container">
             
             {data.requests.map((requestItem, index)=>(
-                <CardMyRequests title={requestItem.title} description={requestItem.description} status={requestItem.status} /> 
+                <CardMyRequests uid={requestItem.uid} title={requestItem.title} description={requestItem.description} status={requestItem.status} /> 
             )
 
             )}

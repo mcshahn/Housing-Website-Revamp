@@ -1,15 +1,46 @@
 // import logo from './logo.svg';
 import './card_bulletin.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import StatusLabel from './status_label';
-function CardBulletin({title, description, status, numEchoes}){
+function CardBulletin({uid, title, description, status, numEchoes}){
 
   const [curEcho, setCurEcho] = useState(numEchoes)
+  const [echoed, setEchoed] = useState(false)
+
+  useEffect(() => {
+    fetch("/get_user_echoes").then((res) =>
+        res.json().then((data) => {
+          if (data.includes(uid)){
+            setEchoed(true);
+          }
+        })
+    );
+}, []);
+
   function onEchoClick(){
+
     setCurEcho(curEcho + 1)
     console.log(curEcho)
-  }
+    setEchoed(true)
+  
 
+  fetch('/update_echoes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      uid: uid,
+      numEchoes: curEcho,
+    }),
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to update echoes');
+      }
+    })
+    .catch(error => console.error('Error updating echoes:', error));
+}
 
   return (
     <div class="card">
@@ -25,7 +56,7 @@ function CardBulletin({title, description, status, numEchoes}){
     <div class="echo-div">
       <div class="label-shape">
         
-          <div class="echo-button">
+          <button disabled={echoed} onClick={onEchoClick} class="echo-button">
             <svg
               class="arrow-up"
               width="12"
@@ -43,8 +74,8 @@ function CardBulletin({title, description, status, numEchoes}){
               />
             </svg>
   
-            <button class="echo-text" onClick={onEchoClick}>Echo</button>
-          </div>
+            <div class="echo-text" >{echoed?"Already Echoed!":"Echo"}</div>
+          </button>
         </div>
         <div class="echo-text">{curEcho}</div>
       </div>

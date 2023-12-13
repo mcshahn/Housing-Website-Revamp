@@ -38,6 +38,7 @@ user_requests={
 }
 
 # TODO: CHANGE THIS TO HAVE UNI AS A FIELD
+
 requests = [
     {"uid": 1, 
     "title": "Broken Pipes",
@@ -151,23 +152,6 @@ def update_status():
 
     return jsonify({'success': True})
 
-# @app.route('/update_echoes', methods=['POST'])
-# def update_echoes():
-#     data = request.get_json()
-#     uid = data.get('uid')
-#     new_status = data.get('newEchos')
-
-#     # Update the status in the user_requests dictionary
-#     for request_info in user_requests.get(session.get('uni', ''), []):
-#         if request_info['title'] == title:
-#             request_info['status'] = new_status
-
-
-#     for r in requests:
-#         if r['title'] == title:
-#             r['status'] = new_status
-
-#     return jsonify({'success': True})
 
 @app.route('/user_data')
 def get_user_requests():
@@ -197,7 +181,9 @@ def add_user_request():
             specifySpace = data.get('specifySpace')
 
             # Create a new user request
+            uid = len(requests)+1
             new_request = {
+                    "uid": uid,
                     "title": title, 
                     "description": description, 
                     "status": status,
@@ -223,17 +209,25 @@ def add_user_request():
 
     return "Invalid request method"
    
-@app.route('/ec_data')
-def get_ec_requests():
- 
-    # Returning an api for showing in  reactjs
-    return {
-        'Name':"geek", 
-        "Age":"22",
-        "Date":x, 
-        "programming":"python"
-        }
- 
+@app.route('/get_user_echoes')
+def get_user_echoes():
+    echoed = echos_per_user.get(session.get('uni', ''),[])
+    return jsonify(echoed)
+
+@app.route('/update_echoes', methods=['POST'])
+def update_echoes():
+    data = request.get_json()
+    uid = data.get('uid')
+    new_numEchoes = data.get('numEchoes')
+
+    echos_per_user.get(session.get('uni', '')).append(uid)
+
+    for r in requests:
+        if r['uid'] == uid:
+            r['echo'] = new_numEchoes
+
+    return jsonify({'success': True})
+
 # Running app
 if __name__ == '__main__':
     app.run(debug=True)

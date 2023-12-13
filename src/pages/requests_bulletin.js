@@ -51,14 +51,14 @@ function RequestsBulletin(){
             Requests Bulletin
         </div>            
         <div id="sub-header">
-            <span class = "dropdown">
+            {/* <span class = "dropdown">
                 <div class = "dropdown-label">Floor</div>
                 <div class = "dropdown-label">
                     <select> 
                         <option class="floor-content" value="1">1</option>
                     </select>
                 </div>
-            </span>
+            </span> */}
             
             <span>
                 <button id="new-service-button">

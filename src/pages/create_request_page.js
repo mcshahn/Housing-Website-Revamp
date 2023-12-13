@@ -168,7 +168,7 @@ function CreateRequestPage() {
                 {isPopupOpen && (
                   <div className="popup" id="popup">
                     <h2>Thank you!</h2>
-                    <p>Facilities has received your request. An email confirmation has been sent to your inbox.</p>
+                    <p>Facilities has received your request. You can view your request in the My Requests tab.</p>
                     <button className='create-request-buttons' type="button" id="ok" onClick={closePopup}>OK</button>
                   </div>
                 )}

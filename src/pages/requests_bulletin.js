@@ -35,7 +35,7 @@ function RequestsBulletin(){
     // Using useEffect for single rendering; add filtering
     //change with dorm data + filtering
     useEffect(() => {
-        fetch("/user_data").then((res) =>
+        fetch("/all_requests").then((res) =>
             res.json().then((data) => {
                 setdata({
                     requests: data

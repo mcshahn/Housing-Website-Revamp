@@ -3,24 +3,46 @@ import { Link, useNavigate } from 'react-router-dom';
 import './dorm_selection.css';
 import { useState } from 'react';
 function DormSelectionPage() {
-  
+  const getInitialState = () => {
+    const value = "none";
+    return value;
+  };
+
+  const [dorm, setDorm] = useState(getInitialState);
 
   const navigate = useNavigate();
 
   const toRequestsBulletin=()=>{
     // navigate('/requests_bulletin',{state:{dorm:value}});
+    if (dorm) {
+      // Send the dorm information to the Flask server
+      fetch('/send_dorm_to_server', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ dorm }),
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to send dorm information to the server');
+          }
+          
+          // After successfully sending dorm information, navigate to the requests_bulletin route
+    localStorage.setItem('dorm_name', dorm);
     localStorage.setItem('dorm_name', dorm);
     
-    navigate('/requests_bulletin');
+          localStorage.setItem('dorm_name', dorm);
     
+          navigate('/requests_bulletin');
+        })
+        .catch(error => console.error('Error sending dorm information:', error));
+    } else {
+      console.error('Dorm is empty. Cannot send request to the server.');
+    }
 
   }
-  const getInitialState = () => {
-      const value = "none";
-      return value;
-    };
   
-    const [dorm, setDorm] = useState(getInitialState);
   
     const handleChange = (e) => {
       setDorm(e.target.value);

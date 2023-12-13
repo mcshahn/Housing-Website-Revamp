@@ -123,6 +123,19 @@ def login():
 # def create_request():
 #     return render_template('create_request.html') 
 
+@app.route('/send_dorm_to_server', methods=['POST'])
+def receive_dorm_from_client():
+    data = request.get_json()
+    selected_dorm = data.get('dorm')
+    session['selected_dorm'] = selected_dorm
+
+    # Process the received dorm information as needed
+    print(f'Received dorm from client: {selected_dorm}')
+
+    # Your other server logic...
+
+    return jsonify({'success': True})
+
 @app.route('/create', methods=['POST'])
 def create():
     data = request.get_json()
@@ -158,13 +171,17 @@ def update_status():
 @app.route('/user_data')
 def get_user_requests():
     uni = session.get('uni')
-    print(uni)
-    print(user_requests.get(uni, []))
     return jsonify(user_requests.get(uni, []))
 
 @app.route('/all_requests')
 def get_all_requests():
-    return jsonify(requests)
+    selected_dorm = session.get('selected_dorm')
+    print("hi", selected_dorm)
+    dorm_requests = []
+    for r in requests:
+        if r['dorm'] == selected_dorm:
+            dorm_requests.append(r)
+    return jsonify(dorm_requests)
 
 @app.route('/add_user_request', methods=['POST'])
 def add_user_request():

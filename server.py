@@ -25,7 +25,7 @@ user_requests={
     ]
 }
 
-
+# TODO: CHANGE THIS TO HAVE UNI AS A FIELD
 requests = [
     {"title": "Broken Pipes",
     "description":"Broken pipes in the lounge area causing flooding.",
@@ -105,6 +105,23 @@ def create():
 def card():
     return render_template('card.html') 
 
+@app.route('/update_status', methods=['POST'])
+def update_status():
+    data = request.get_json()
+    title = data.get('title')
+    new_status = data.get('newStatus')
+
+    # Update the status in the user_requests dictionary
+    for request_info in user_requests.get(session.get('uni', ''), []):
+        if request_info['title'] == title:
+            request_info['status'] = new_status
+
+
+    for r in requests:
+        if r['title'] == title:
+            r['status'] = new_status
+
+    return jsonify({'success': True})
 
 @app.route('/user_data')
 def get_user_requests():

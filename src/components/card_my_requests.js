@@ -6,6 +6,23 @@ function CardMyRequests({title, description, status}){
   const [curStatus, setCurStatus] = useState(status);
   function handleResolve(){
     setCurStatus("resolved")
+
+    fetch('/update_status', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title,
+        newStatus: 'resolved',
+      }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to update status');
+        }
+      })
+      .catch(error => console.error('Error updating status:', error));
   }
   
   return (

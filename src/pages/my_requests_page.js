@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function MyRequestsPage(){
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-        let path = `/dorm_selection`; 
+        let path = `/create_request`; 
         navigate(path);
     }
 

@@ -11,9 +11,22 @@ function RequestsBulletin(){
         let path = `/dorm_selection`; 
         navigate(path);
     }
+    const routeNewRequest = ()=>{
+        let path = '/create_request' 
+        navigate(path);
+    }
+//    const location = useLocation();
+    // let curDorm = location.state.dorm;
+    const [dorm, setDorm] = useState("NA")
 
-    const location = useLocation();
-    let curDorm = location.state.dorm;
+    useEffect(() => {
+        // Retrieve the uni value from localStorage when the component mounts
+        const storedDorm = localStorage.getItem('dorm_name');
+        if (storedDorm) {
+          setDorm(storedDorm);
+        }
+      }, []);
+    
 
     const [data, setdata] = useState({
         requests: []
@@ -33,7 +46,7 @@ function RequestsBulletin(){
    
   return (
     <div class="container">
-    <div id="change-hall-div"><span id="hall-label">{curDorm}</span><span><button onClick={routeChange}>Change</button></span></div>
+    <div id="change-hall-div"><span id="hall-label">{dorm}</span><span><button onClick={routeChange}>Change</button></span></div>
         <div id="request-bulletin-label">
             Requests Bulletin
         </div>            
@@ -49,7 +62,7 @@ function RequestsBulletin(){
             
             <span>
                 <button id="new-service-button">
-                    <span class="button-text">New Service Request</span>
+                    <span class="button-text" onClick={routeNewRequest}>New Service Request</span>
                     <span><i class="fa fa-solid fa-plus button-text"></i></span>
                 </button>
             </span>

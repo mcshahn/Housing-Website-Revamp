@@ -8,20 +8,27 @@ function DormSelectionPage() {
   const navigate = useNavigate();
 
   const toRequestsBulletin=()=>{
-    navigate('/requests_bulletin',{state:{dorm:value}});
+    // navigate('/requests_bulletin',{state:{dorm:value}});
+    localStorage.setItem('dorm_name', dorm);
+    
+    navigate('/requests_bulletin');
+    
+
   }
   const getInitialState = () => {
       const value = "none";
       return value;
     };
   
-    const [value, setValue] = useState(getInitialState);
+    const [dorm, setDorm] = useState(getInitialState);
   
     const handleChange = (e) => {
-      setValue(e.target.value);
+      setDorm(e.target.value);
+      console.log("dorm", dorm)
+      
     };
 
-    console.log(value)
+    console.log(dorm)
   return (
     <div class="container">
             <div id="choose-your-main-residence-hall-label">
@@ -30,7 +37,7 @@ function DormSelectionPage() {
             <div id="can-change-later-label">
                 You can change this in the future
             </div>
-            <select name="language" id = "dorm-selection-dropdown" value={value} onChange={handleChange} >
+            <select name="language" id = "dorm-selection-dropdown" onChange={handleChange} >
                 <option value="none" selected disabled hidden>Select a residence hall</option> 
                 <option class="dropdown-content" value="537 W 121st">537 W 121st</option>
                 <option class="dropdown-content" value="548 W 113th St.">548 W 113th St.</option>

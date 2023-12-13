@@ -60,7 +60,7 @@ function LoginPage() {
       </div>
       <div>
         <div>
-          <button id="button" type="button" onClick={handleLogin}>Login</button>
+          <button id="login-button" type="button" onClick={handleLogin}>Login</button>
         </div>
       </div>
 

@@ -70,7 +70,7 @@ function RequestsBulletin(){
             <div id="scrollable-container">
             
             {data.requests.map((requestItem, index)=>(
-                <CardBulletin title={requestItem.title} description={requestItem.description} status={requestItem.status} /> 
+                <CardBulletin title={requestItem.title} description={requestItem.description} status={requestItem.status} numEchoes={requestItem.echo}/> 
             )
 
             )}

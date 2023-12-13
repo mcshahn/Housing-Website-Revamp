@@ -13,48 +13,76 @@ app.secret_key = 'service_request'
 user_requests={
     "al4130":
     [
-        {"title": "Broken Pipes",
+        {"uid": 1,
+        "title": "Broken Pipes",
         "description":"Broken pipes in the lounge area causing flooding.",
         "status": "not_started"},
-        {"title": "Drain Blockage",
+        {"uid":2,
+        "title": "Drain Blockage",
         "description":"Shower drain is not draining",
         "status": "in_progress"},
-        {"title": "Broken Outlet",
+        {"uid": 3,
+        "title": "Broken Outlet",
         "description":"Outlet in the wall doesn't have any electricity",
         "status": "resolved"}
+    ],
+    "ma3852":
+    [
+        {"uid": 4,
+        "title": "Mushroom",
+        "description":"There's a mushroom growing in the middle of the lounge",
+        "status": "not_started"}
+        
     ]
+
 }
 
 # TODO: CHANGE THIS TO HAVE UNI AS A FIELD
 requests = [
-    {"title": "Broken Pipes",
+    {"uid": 1, 
+    "title": "Broken Pipes",
     "description":"Broken pipes in the lounge area causing flooding.",
     "status": "not_started",
     "dorm": "East Campus",
     "floor": "20",
     "roomSpace": "Lounge",
     "specifySpace": "",
-    "echo": "0"},
+    "echo": 1},
 
-    {"title": "Drain Blockage",
+    {"uid": 2,
+    "title": "Drain Blockage",
     "description":"Shower drain is not draining",
     "status": "in_progress",
     "dorm": "East Campus",
     "floor": "20",
     "roomSpace": "Lounge",
     "specifySpace": "",
-    "echo": "0"},
+    "echo": 1},
 
-    {"title": "Broken Outlet",
+    {"uid": 3,
+     "title": "Broken Outlet",
     "description":"Outlet in the wall doesn't have any electricity",
     "status": "resolved",
     "dorm": "East Campus",
     "floor": "20",
     "roomSpace": "Lounge",
     "specifySpace": "",
-    "echo": "0"}
-]
+    "echo": 0},
 
+    {"uid": 4,
+    "title": "Mushroom",
+    "description":"There's a mushroom growing in the middle of the lounge",
+    "status": "not_started",
+    "dorm": "Hartley",
+    "floor": "12",
+    "roomSpace": "Lounge",
+    "specifySpace": "",
+    "echo": 1}
+]
+echos_per_user={
+    "al4130":[1, 4],
+    "ma3852": [2, 4]
+}
 #Route for landing page
 @app.route('/')
 def home():
@@ -123,6 +151,24 @@ def update_status():
 
     return jsonify({'success': True})
 
+# @app.route('/update_echoes', methods=['POST'])
+# def update_echoes():
+#     data = request.get_json()
+#     uid = data.get('uid')
+#     new_status = data.get('newEchos')
+
+#     # Update the status in the user_requests dictionary
+#     for request_info in user_requests.get(session.get('uni', ''), []):
+#         if request_info['title'] == title:
+#             request_info['status'] = new_status
+
+
+#     for r in requests:
+#         if r['title'] == title:
+#             r['status'] = new_status
+
+#     return jsonify({'success': True})
+
 @app.route('/user_data')
 def get_user_requests():
     uni = session.get('uni')
@@ -158,7 +204,8 @@ def add_user_request():
                     "dorm": dorm,
                     "floor": floor,
                     "roomSpace": roomSpace,
-                    "specifySpace": specifySpace}
+                    "specifySpace": specifySpace,
+                    "echo": 0}
 
             new_shortened = {
                 "title": title, 

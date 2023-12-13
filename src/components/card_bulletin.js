@@ -1,8 +1,16 @@
 // import logo from './logo.svg';
 import './card_bulletin.css';
+import { useState } from 'react';
 import StatusLabel from './status_label';
-
 function CardBulletin({title, description, status, numEchoes}){
+
+  const [curEcho, setCurEcho] = useState(numEchoes)
+  function onEchoClick(){
+    setCurEcho(curEcho + 1)
+    console.log(curEcho)
+  }
+
+
   return (
     <div class="card">
     <div class="card-content">
@@ -35,10 +43,10 @@ function CardBulletin({title, description, status, numEchoes}){
               />
             </svg>
   
-            <div class="echo-text">Echo</div>
+            <button class="echo-text" onClick={onEchoClick}>Echo</button>
           </div>
         </div>
-        <div class="echo-text">{numEchoes}</div>
+        <div class="echo-text">{curEcho}</div>
       </div>
       
     </div>

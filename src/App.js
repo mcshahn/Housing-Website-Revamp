@@ -14,6 +14,7 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route path="/" element={<LoginPage />}></Route>
         <Route path="/dorm_selection" element={<DormSelectionPage />}></Route>
         <Route path="/my_requests" element={<MyRequestsPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>

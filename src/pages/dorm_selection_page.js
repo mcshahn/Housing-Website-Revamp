@@ -29,8 +29,7 @@ function DormSelectionPage() {
           }
           
           // After successfully sending dorm information, navigate to the requests_bulletin route
-    localStorage.setItem('dorm_name', dorm);
-    localStorage.setItem('dorm_name', dorm);
+    
     
           localStorage.setItem('dorm_name', dorm);
     

@@ -9,8 +9,10 @@ import { useNavigate } from 'react-router-dom';
 
 function CreateRequestPage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     try {
       // Make a POST request to the server endpoint with the form data
       const response = await fetch('/add_user_request', {
@@ -30,10 +32,12 @@ function CreateRequestPage() {
     } catch (error) {
       console.error('Error submitting request:', error.message);
     }
+    
   };
 
   const closePopup = () => {
     setIsPopupOpen(false);
+    navigate('/my_requests')
   };
 
   const [formData, setFormData] = useState({
@@ -45,14 +49,20 @@ function CreateRequestPage() {
     additionalDescription: ''
   });
 
+  const issues = [
+    "Mold", "Broken Items", "Clogged Drain","AC/Heating Unit", "Outlets", "Electrical", "Windows"
+  ]
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value
     }));
+    
+
   };
-  const navigate = useNavigate();
+  
 
 
   return (
@@ -71,7 +81,7 @@ function CreateRequestPage() {
                 <div id="uni">Main Residence Hall </div>
                 <select className='create-request-select' name="dorm" id = "dorm-selection-dropdown" onChange={handleChange} required>
                 <option value="" selected disabled hidden>Select a residence hall</option> 
-                  <option class="dropdown-content" value="537 W 121st">537 W 121st</option>
+                <option class="dropdown-content" value="537 W 121st">537 W 121st</option>
                 <option class="dropdown-content" value="548 W 113th St.">548 W 113th St.</option>
                 <option class="dropdown-content" value="600 W 113TH ST (Nuss)">600 W 113TH ST (Nuss)</option>
                 <option class="dropdown-content" value="600 W 116TH ST">600 W 116TH ST</option>
@@ -109,7 +119,7 @@ function CreateRequestPage() {
             <div class="text-box">
               <div id="uni">Floor </div>
               <select className= 'create-request-select'name="floor" id = "dorm-selection-dropdown" onChange={handleChange} required>
-                <option value="" selected disabled hidden>1</option> 
+                <option value="" selected disabled hidden>-</option> 
                 
                 <option class="dropdown-content" value="1">1</option>
                 <option class="dropdown-content" value="2">2</option>
@@ -137,7 +147,11 @@ function CreateRequestPage() {
            
             <div class="text-box">
               <div>
-                <input type="text" name="issue" placeholder="Search for an issue" onChange={handleChange} required></input>
+                <input list="data" type="text" name="issue" placeholder="Search for an issue" onChange={handleChange} required/>
+                <datalist id="data"  >
+                  {issues.map((issue) => <option>{issue}</option>)}
+                </datalist>
+                
               </div>
             </div>
             
@@ -163,10 +177,6 @@ function CreateRequestPage() {
             </div>
           </form>
 
-            {/* <div id="nav-bar">
-              <span className="item"><div id="nav-label"><FontAwesomeIcon icon={faListUl} id="icon" /><br></br><h>Request Bulletin</h></div></span>
-              <span className="item"><div id="nav-label"><FontAwesomeIcon icon={faUser} id="icon" aria-hidden="true" /><br></br><h>My Requests</h></div></span>
-            </div> */}
             <Footer/>
 
     </div>

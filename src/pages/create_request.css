@@ -280,6 +280,9 @@ h {
     color: #003087; 
     margin-top: 51px;
 }
+#back:hover {
+    cursor:pointer;
+}
 
 #back-label {
     width: 40px; 

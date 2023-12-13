@@ -24,23 +24,23 @@ function CardBulletin({uid, title, description, status, numEchoes}){
     setEchoed(true)
   
 
-  fetch('/update_echoes', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      uid: uid,
-      numEchoes: curEcho,
-    }),
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to update echoes');
-      }
+    fetch('/update_echoes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        uid: uid,
+        numEchoes: curEcho,
+      }),
     })
-    .catch(error => console.error('Error updating echoes:', error));
-}
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to update echoes');
+        }
+      })
+      .catch(error => console.error('Error updating echoes:', error));
+  }
 
   return (
     <div class="card">

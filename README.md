@@ -2,8 +2,7 @@
 ## Allison Liu, Leon Wu, Michelle Ahn, Muchen Guo
 # How to run
 In the project directory, you can run:
-### `python3 server.py`
-### `npm start`
+### `python3 server.py \n npm start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 

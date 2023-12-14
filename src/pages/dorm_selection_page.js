@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './dorm_selection.css';
 import { useState } from 'react';
 function DormSelectionPage() {

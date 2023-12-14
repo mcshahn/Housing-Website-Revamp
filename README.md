@@ -1,24 +1,32 @@
 # UI Design Group 21
 ## Allison Liu (al4130), Leon Wu (llw2128), Michelle Ahn (ma3852), Muchen Guo (mg4376)
 # How to run
-In the project directory, you can run:
+In two different terminal shells, run:
 ### 
 ```
 python3 server.py
+```
+and  
+```
 npm start
 ```
 
-Runs the app in the development mode.\
+This runs the React app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-For best results, we recommend you are on a Macbook and that you view the webpage on the Chrome Browser
+For best results, we recommend you are on a Macbook and that you view the webpage on the Chrome Browser.
 
 ## Troubleshooting
-We configured our code so that the flask server is connected to the react app through port 5000. If you are facing server issues, make sure http://localhost:5000 is up and running. The react app should be hosted on port 3000.
+We configured our code so that the Flask server is connected to the React app through port 5000. If you are facing server issues, make sure the  Flask server on http://localhost:5000 is up and running. The React app should be hosted on port 3000.
+
+Although we tried out best to account for most screen ratios, you may have to scroll down to find some buttons. 
+
+__________
 
 
 
-# Getting Started with Create React App
+# Miscellaneous: 
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

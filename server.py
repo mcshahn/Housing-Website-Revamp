@@ -220,7 +220,7 @@ def add_user_request():
             }
 
             # Append the new user request to the global variable
-            print(user_requests)
+            # print(user_requests)
             user_requests[uni].insert(0, new_shortened)
             requests.insert(0, new_request)
 

@@ -16,6 +16,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 For best results, we recommend you are on a Macbook and that you view the webpage on the Chrome Browser.
 
+## Testing
+We added data to each residence hall and implemented features allowing for new users to be able to create new requests. If you wish to see a more populated example, please type in "ma3852" or "al4130" when logging in and selecting the dorm "East Campus".
 ## Troubleshooting
 We configured our code so that the Flask server is connected to the React app through port 5000. If you are facing server issues, make sure the  Flask server on http://localhost:5000 is up and running. The React app should be hosted on port 3000.
 

@@ -132,6 +132,7 @@ function CreateRequestPage() {
                 <option value="" selected disabled hidden>Lounge</option> 
                 <option className="dropdown-content" value="lounge">Lounge</option>
                 <option className="dropdown-content" value="kitchen">Kitchen</option>
+                <option className="dropdown-content" value="bathroom">Bathroom</option>                
               </select>
             </div>
             <div className="text-box">

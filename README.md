@@ -1,4 +1,16 @@
-#UI Design 
+# UI Design Group 21
+## Allison Liu, Leon Wu, Michelle Ahn, Muchen Guo
+# How to run
+In the project directory, you can run:
+### `python3 server.py`
+### `npm start`
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+For best results, we recommend you are on a Macbook and that you view the webpage on the Chrome Browser
+
+## Troubleshooting
+We configured our code so that the flask server is connected to the react app through port 5000. If you are facing server issues, make sure http://localhost:5000 is up and running. The react app should be hosted on port 3000.
 
 
 

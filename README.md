@@ -1,5 +1,5 @@
 # UI Design Group 21
-## Allison Liu, Leon Wu, Michelle Ahn, Muchen Guo
+## Allison Liu (al4130), Leon Wu (llw2128), Michelle Ahn (ma3852), Muchen Guo (mg4376)
 # How to run
 In the project directory, you can run:
 ### 

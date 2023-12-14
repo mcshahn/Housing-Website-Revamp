@@ -5,7 +5,6 @@ function CardMyRequests({uid, title, description, status}){
   const [curStatus, setCurStatus] = useState(status);
   function handleResolve(){
     setCurStatus("resolved")
-    console.log(uid)
     fetch('/update_status', {
       method: 'POST',
       headers: {
@@ -24,20 +23,20 @@ function CardMyRequests({uid, title, description, status}){
       .catch(error => console.error('Error updating status:', error));
   }
   return (
-    <div class="card">
-    <div class="card-content">
-      <div class="card-header">
-        <div class="title">{title}</div>
+    <div className="card">
+    <div className="card-content">
+      <div className="card-header">
+        <div className="title">{title}</div>
       </div>
-      <div class="supporting-text">
+      <div className="supporting-text">
         {description}
       </div>
-      <StatusLabel iconName={curStatus} status={curStatus}/>
+      <StatusLabel iconName={curStatus}/>
     </div>
-    <div class="resolve-div">
-      <div class="label-shape">
-          <button onClick={handleResolve} class="resolve-button">
-            <div class="resolve-text">Mark As Resolved</div>
+    <div className="resolve-div">
+      <div className="label-shape">
+          <button onClick={handleResolve} className="resolve-button">
+            <div className="resolve-text">Mark As Resolved</div>
           </button>
         </div>
         

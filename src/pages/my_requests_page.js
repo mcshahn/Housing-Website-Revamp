@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import React, { useState, useEffect } from "react";
 import './my_requests.css';
 import Footer from '../components/footer'
@@ -40,7 +39,7 @@ function MyRequestsPage(){
             <div id="scrollable-container">
             
             {(data.requests.length > 0) ? data.requests.map((requestItem, index)=>(
-                <CardMyRequests uid={requestItem.uid} title={requestItem.title} description={requestItem.description} status={requestItem.status} /> 
+                <CardMyRequests key={index} uid={requestItem.uid} title={requestItem.title} description={requestItem.description} status={requestItem.status} /> 
             )
 
             ): <div id="no-requests-text">You have no requests! Click on the button above to create a new request!</div>

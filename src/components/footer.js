@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList } from '@fortawesome/free-solid-svg-icons'

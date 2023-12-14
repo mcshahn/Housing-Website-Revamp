@@ -68,15 +68,7 @@
     left: 1px;
     top: 1px;
   }
-  /* .not-started-status-dot {
-    background: var(--warning-500, #EAD1CF);
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    left: 1px;
-    top: 1px;
-  } */
+
   .not-started-status-dot {
     background: var(--warning-500, #F04438);
     border-radius: 50%;

@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import './dorm_selection.css';
 import { useState } from 'react';
@@ -13,7 +12,6 @@ function DormSelectionPage() {
   const navigate = useNavigate();
 
   const toRequestsBulletin=()=>{
-    // navigate('/requests_bulletin',{state:{dorm:value}});
     if (dorm) {
       // Send the dorm information to the Flask server
       fetch('/send_dorm_to_server', {
@@ -28,11 +26,8 @@ function DormSelectionPage() {
             throw new Error('Failed to send dorm information to the server');
           }
           
-          // After successfully sending dorm information, navigate to the requests_bulletin route
-    
-    
           localStorage.setItem('dorm_name', dorm);
-    
+          // After successfully sending dorm information, navigate to the requests_bulletin route
           navigate('/requests_bulletin');
         })
         .catch(error => console.error('Error sending dorm information:', error));
@@ -44,12 +39,8 @@ function DormSelectionPage() {
   
   
     const handleChange = (e) => {
-      setDorm(e.target.value);
-      console.log("dorm", dorm)
-      
+      setDorm(e.target.value);      
     };
-
-    console.log(dorm)
   return (
     <div class="container">
             <div id="choose-your-main-residence-hall-label">

@@ -17,13 +17,10 @@
     margin: auto;
     width: 100%;
     text-align:center;
-    /*I added this to change th font feel free to remove*/
     font: var(--_10-px, 400 15px/140% "Arial-Regular", sans-serif);
-    /* border: 3px solid green;
-    padding: 10px; */
+    
 }
 
 .footer-item:hover{
     color: #0077C8;
-    /* background-color: #0077C8; */
 }

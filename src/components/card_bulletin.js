@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './card_bulletin.css';
 import { useState, useEffect } from 'react';
 import StatusLabel from './status_label';
@@ -20,7 +19,6 @@ function CardBulletin({uid, title, description, status, numEchoes}){
   function onEchoClick(){
 
     setCurEcho(curEcho + 1)
-    console.log(curEcho)
     setEchoed(true)
   
 
@@ -51,12 +49,12 @@ function CardBulletin({uid, title, description, status, numEchoes}){
       <div class="supporting-text">
         {description}
       </div>
-      <StatusLabel iconName={status} status={status}/>
+      <StatusLabel iconName={status}/>
     </div>
     <div class="echo-div">
       <div class="label-shape">
         
-          <button disabled={echoed} onClick={onEchoClick} class="echo-button">
+          <button disabled={echoed} onClick={onEchoClick} class={echoed?"disabled-button":"echo-button"}>
             <svg
               class="arrow-up"
               width="12"

@@ -1,9 +1,7 @@
 # Import flask and datetime module for showing date and time
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 
-# firebase = pyrebase.initialize_app(config)
-# auth = firebase.auth() 
-# storage = firebase.storage()
+
 
 # Initializing flask app
 app = Flask(__name__)
@@ -36,8 +34,6 @@ user_requests={
     ]
 
 }
-
-# TODO: CHANGE THIS TO HAVE UNI AS A FIELD
 
 requests = [
     {"uid": 1, 
@@ -200,12 +196,15 @@ def add_user_request():
             roomSpace = data.get('roomSpace')
             specifySpace = data.get('specifySpace')
 
+            short_description= description
+            if len(short_description)>50:
+                short_description = description[:40]+"..."
             # Create a new user request
             uid = len(requests)+1
             new_request = {
                     "uid": uid,
                     "title": title, 
-                    "description": description, 
+                    "description": short_description, 
                     "status": status,
                     "dorm": dorm,
                     "floor": floor,
@@ -216,7 +215,7 @@ def add_user_request():
             new_shortened = {
                 "uid": uid,
                 "title": title, 
-                "description": description, 
+                "description": short_description, 
                 "status": status
             }
 
